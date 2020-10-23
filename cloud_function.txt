@@ -1,0 +1,17 @@
+/**
+ * Responds to any HTTP request.
+ *
+ * @param {!express:Request} req HTTP request context.
+ * @param {!express:Response} res HTTP response context.
+ */
+
+exports.helloWorld = (req, res) => {
+  let name = req.query.message || req.body.message || "Please enter your name";
+  let message = '';
+  if(name == "Please enter your name"){
+    res.send(name);
+  }
+  message = "Hello".concat(" ").concat(name);
+  res.send(message)
+};
+
